@@ -1,0 +1,240 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+.colores {
+    color: #267dad;
+    color: #f27e0a;
+}
+.noPadding {
+    padding: 0;
+}
+.img100 {
+    width: 100%;
+}
+.blueBold {
+    font-weight: 700;
+    color: #267dad;
+}
+.orangeBold {
+    font-weight: 700;
+    color: #f27e0a;
+}
+h1 {
+    font-weight: 700;
+}
+.slogan {
+    background: #267dad;
+    color: #fff;
+    margin-bottom: 4em;
+}
+.slogan h1 {
+    font-size: 2em;
+    padding-bottom: 0.4em;
+}
+.info h1 {
+    color: #f27e0a;
+    font-size: 1.4em;
+    line-height: 1.3em;
+}
+.info p {
+    text-align: justify;
+}
+.icons {
+    padding: 0.3em;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+.icons img {
+    margin-bottom: 1em;
+}
+.icons p {
+    font-size: 1.15em;
+    text-align: center;
+}
+.form h1 {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+.form p {
+    color: #fff;
+}
+.form label {
+    color: #fff;
+    font-weight: 300;
+    font-size: 0.8em;
+}
+.mainForm {
+    background-color: #267dad;
+    padding-bottom: 2.2em;
+    -webkit-border-radius: 1.12em;
+    -moz-border-radius: 1.12em;
+    -o-border-radius: 1.12em;
+    border-radius: 1.12em;
+}
+form {
+    text-align: left;
+}
+input, select {
+    width: 100%;
+    height: 2.2em;
+    border: 1px solid #a5a6a9;
+    margin-bottom: 0.6em;
+    padding: 0.2em 0.9em;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance:none;
+    font-family:inherit;
+}
+select {
+    background: #fff url(../img/select.png) no-repeat 96% center;
+    padding: 0.2em 1.3em 0.2em 0.9em;
+}
+.btn {
+    display: inline-block;
+    background-color: #f27e0a;
+    color: #fff;
+    padding: 0.7em 1.2em;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    width: 100%;
+    margin-bottom: 0.7em;
+    transition: background-color 0.3s;
+}
+.btn:hover, .btn:focus {
+    background-color: #f27e0a;
+    color: #fff;
+}
+.btn:visited {
+    background-color: #f27e0a;
+    color: #fff;
+}
+
+.link, .link:visited {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+.btnForm {
+    margin-top: 0.8em;
+}
+.footer {
+    background: #267dad;
+    color: #fff;
+    padding: 0.8em;
+}
+.slogan2 h1 {
+    font-weight: 300;
+    font-size: 2em;
+    margin: 0;
+    padding: 1em 0;
+}
+.smallLeft {
+    padding-right: 0.4em;
+}
+.smallRight {
+    padding-left: 0.4em;
+}
+.privacy {
+    font-size: 0.8em;
+}
+/*Checkboxes styles*/
+.check {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+}
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 18px;
+  font-size: 0.8em;
+  font-weight: 300;
+  color: #fff;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #272425;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  background-color: rgba(0,0,0,0);
+  opacity: 1;
+  border: 1px solid #fff;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+ol {
+        padding-left:10px;
+}
+.btnRegistroMobile {
+    margin-bottom: 2em;
+    font-size: 1.2em;
+}
+.link2, .link2:focus, .link2:hover, .link2:visited {
+    color: #267dad;
+    text-decoration: underline;
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    .slogan h1 {
+        font-size: 1.4em;
+        padding-bottom: 0.4em;
+    }
+    .slogan {
+        margin-bottom: 1em;
+    }
+    .slogan2 h1 {
+        font-size: 1.5em;
+    }
+    .info p {
+        font-size: 1.2em;
+    }
+    .form p {
+        font-size: 1.2em;
+    }
+}
+
+/* Fix */
+@media (min-width: 768px) and (max-width: 991px) {
+    .info {
+        padding-right: 2.5em;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .footer {
+        position: fixed;
+        bottom: 0;
+    }
+}
