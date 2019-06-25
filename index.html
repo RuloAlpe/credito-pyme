@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap" rel="stylesheet">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
+    <link rel="stylesheet" href="css/ladda-themeless.min.css">
 
 </head>
 
@@ -137,14 +137,21 @@
                     Tenemos la solución financiera ideal para impulsar a tu empresa. Regístrate y aprovecha esta
                     oportunidad para seguir creciendo.
                 </p>
-                <form action="">
+
+                <!-- 
+
+                    INICIA FORMULARIO DE CONTACTO
+
+                 -->
+                <form id="contactForm1" action="guardarDatos.php" method="post">
                     <div class="col-xs-12 noPadding">
                         <label for="name">
                             Nombre(s):
                         </label>
                     </div>
                     <div class="col-xs-12 noPadding">
-                        <input type="text">
+                        <input id="nombre" name="nombre" type="text">
+                        <small class="obligatorio_nombre" style="display:none">*Campo requerido</small>
                     </div>
 
                     <div class="col-xs-6 noPadding">
@@ -154,7 +161,8 @@
                             </label>
                         </div>
                         <div class="col-xs-12 noPadding smallLeft">
-                            <input type="text" class="">
+                            <input id="apellido_p" name="apellido_p" type="text" class="">
+                            <small class="obligatorio_apellido_p" style="display:none">*Campo requerido</small>
                         </div>
                     </div>
                     <div class="col-xs-6 noPadding">
@@ -164,7 +172,8 @@
                             </label>
                         </div>
                         <div class="col-xs-12 noPadding smallRight">
-                            <input type="text">
+                            <input id="apellido_m" name="apellido_m" type="text">
+                            <small class="obligatorio_apellido_m" style="display:none">*Campo requerido</small>
                         </div>
                     </div>
                     <div class="col-xs-6 noPadding">
@@ -174,7 +183,8 @@
                             </label>
                         </div>
                         <div class="col-xs-12 noPadding smallLeft">
-                            <input type="text" class="">
+                            <input id="telefono" name="telefono" type="text" maxlength="15">
+                            <small class="obligatorio_telefono" style="display:none">*Campo requerido</small>
                         </div>
                     </div>
                     <div class="col-xs-6 noPadding">
@@ -184,7 +194,8 @@
                             </label>
                         </div>
                         <div class="col-xs-12 noPadding smallRight">
-                            <input type="text">
+                            <input id="email" name="email" type="text">
+                            <small class="obligatorio_email" style="display:none">*Campo requerido</small>
                         </div>
                     </div>
 
@@ -194,7 +205,8 @@
                         </label>
                     </div>
                     <div class="col-xs-12 noPadding">
-                        <input type="text">
+                        <input id="empresa" name="empresa" type="text">
+                        <small class="obligatorio_empresa" style="display:none">*Campo requerido</small>
                     </div>
                     <div class="col-xs-12 noPadding">
                         <label for="name">
@@ -202,13 +214,14 @@
                         </label>
                     </div>
                     <div class="col-xs-12 noPadding">
-                        <select name="" id="">
-                            <option value="">Persona física</option>
-                            <option value="">Persona física con actividad empresarial</option>
-                            <option value="">Persona moral del régimen general</option>
-                            <option value="">Personal moral con fines no lucrativos</option>
-                            <option value="">Régimen de incorporación fiscal</option>
+                        <select name="regimen_fiscal" id="regimen_fiscal">
+                            <option value="Persona física">Persona física</option>
+                            <option value="Persona física con actividad empresarial">Persona física con actividad empresarial</option>
+                            <option value="Persona moral del régimen general">Persona moral del régimen general</option>
+                            <option value="Personal moral con fines no lucrativos">Personal moral con fines no lucrativos</option>
+                            <option value="Régimen de incorporación fiscal">Régimen de incorporación fiscal</option>
                         </select>
+                        <small class="obligatorio_regimen_fiscal" style="display:none">*Campo requerido</small>
                     </div>
                     <div class="col-xs-12 noPadding">
                         <label for="name">
@@ -216,27 +229,37 @@
                         </label>
                     </div>
                     <div class="col-xs-12 noPadding">
-                        <select name="" id="">
-                            <option value="">Menos de $500,000</option>
-                            <option value="">Entre $500,000 y un millón de pesos</option>
-                            <option value="">Entre uno y 5 millones de pesos</option>
-                            <option value="">Entre 5 y 10 millones de pesos</option>
-                            <option value="">Entre 10 y 15 millones de pesos</option>
-                            <option value="">Entre 15 y 20 millones de pesos</option>
+                        <select name="ventas_mensuales" id="ventas_mensuales">
+                            <option value="Menos de $500,000">Menos de $500,000</option>
+                            <option value="Entre $500,000 y un millón de pesos">Entre $500,000 y un millón de pesos</option>
+                            <option value="Entre uno y 5 millones de pesos">Entre uno y 5 millones de pesos</option>
+                            <option value="Entre 5 y 10 millones de pesos">Entre 5 y 10 millones de pesos</option>
+                            <option value="Entre 10 y 15 millones de pesos">Entre 10 y 15 millones de pesos</option>
+                            <option value="Entre 15 y 20 millones de pesos">Entre 15 y 20 millones de pesos</option>
                         </select>
+                        <small class="obligatorio_ventas_mensuales" style="display:none">*Campo requerido</small>
                     </div>
                     <div class="col-xs-12 noPadding check">
                         <input type="checkbox" id="box-2">
                         <label for="box-2">Acepto el aviso de privacidad </label>
+                        <small class="obligatorio_privacidad" style="display:none">*Campo requerido</small>
                     </div>
                     <div class="col-xs-12 noPadding text-center">
-                        <a href="#" class="btn btnForm">Enviar</a>
+                        <button id="js-btn-submit" class="btn btnForm ladda-button" data-style="zoom-in">
+                            <span class="ladda-label">Enviar</span>
+                        </button>
                         <p class="privacy">Lee nuestro
                             <a class="link" data-toggle="modal" data-target="#myModalBen1">aviso de
                                 privacidad.</a>
                         </p>
                     </div>
                 </form>
+                <!-- 
+
+                    FINALIZA FORMULARIO DE CONTACTO
+
+                 -->
+
             </div>
         </div>
     </div>
@@ -476,6 +499,9 @@
     </script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/spin.min.js"></script>
+    <script src="js/ladda.min.js"></script>
+    <script src="js/validar_form.js"></script>
 </body>
 
 </html>
