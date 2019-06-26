@@ -19,8 +19,16 @@ if(isset($_POST)){
 
       $mensaje = "<h1>Muchas gracias por registrarte</h1>
       <p>En breve, uno de nuestros agentes se contactará contigo para darte más información sobre la mejor solución financiera para impulsar el crecimiento de tu empresa.</p>"; 
+
       // file_get_contents('./mktrailMails/mktrail_thankyou/index.html');
 
+      $cabeceras = 'From: contacto@creditopyme.mx' . "\r\n";
+      $cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+
+      // send email
+      mail($_POST['email'], "Contacto credito pyme", $mensaje, $cabeceras);
+
+/*
       $mail_p = new PHPMailer();
       $mail_p->IsSMTP();
       $mail_p->SMTPAuth   = true;
@@ -45,7 +53,7 @@ if(isset($_POST)){
           echo "Error " . $mail_p->ErrorInfo;
           exit;
       }
-
+*/
       header("Location: http://localhost:8888/credito_pyme/credito-pyme/gracias.html");
     }
   }catch(Exception $error){
