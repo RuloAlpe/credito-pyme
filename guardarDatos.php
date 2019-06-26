@@ -7,20 +7,20 @@ require 'vendor/autoload.php';
 
 if(isset($_POST)){
   require_once "db.php";
-  
-  try{  
+
+  try{
     $stmt = $conn->prepare("insert into registro_usuarios (txt_nombre, txt_apellido_p, txt_apellido_m, txt_telefono, txt_email, txt_empresa, txt_regimen_fiscal, txt_ventas_mensuales) values (?, ?, ?, ?, ?, ?, ?, ?)");
 
     $stmt->bind_param("ssssssss", $_POST['nombre'], $_POST['apellido_p'], $_POST['apellido_m'], $_POST['telefono'], $_POST['email'], $_POST['empresa'], $_POST['regimen_fiscal'], $_POST['ventas_mensuales']);
-    
+
     /* ejecutar la consulta */
     $stmt->execute();
     if($stmt){
 
-      $mensaje = "<h1>Muchas gracias por registrarte</h1>
-      <p>En breve, uno de nuestros agentes se contactará contigo para darte más información sobre la mejor solución financiera para impulsar el crecimiento de tu empresa.</p>"; 
+      // $mensaje = "<h1>Muchas gracias por registrarte</h1>
+      // <p>En breve, uno de nuestros agentes se contactará contigo para darte más información sobre la mejor solución financiera para impulsar el crecimiento de tu empresa.</p>";
 
-      // file_get_contents('./mktrailMails/mktrail_thankyou/index.html');
+      $mensaje = file_get_contents('./thankyou-registering/index.html');
 
       $cabeceras = 'From: contacto@creditopyme.mx' . "\r\n";
       $cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
@@ -32,9 +32,9 @@ if(isset($_POST)){
       $mail_p = new PHPMailer();
       $mail_p->IsSMTP();
       $mail_p->SMTPAuth   = true;
-      $mail_p->SMTPSecure = "tls"; 
+      $mail_p->SMTPSecure = "tls";
       $mail_p->Host       = "smtp.mandrillapp.com";
-      $mail_p->Port       = 587; 
+      $mail_p->Port       = 587;
       $mail_p->Username   = "aquintana@estrategica.com";
       $mail_p->Password   = "9C6kelU75JH5kwhS_BUFFQ";
       $mail_p->From       = "contacto@creditopyme.mx";
