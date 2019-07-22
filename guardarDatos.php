@@ -26,7 +26,7 @@ if(isset($_POST)){
       $cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
       // send email
-      mail($_POST['email'], "Contacto credito pyme", $mensaje, $cabeceras);
+      mail($_POST['email'], "Contacto Crédito PYME", $mensaje, $cabeceras);
 
 /*
       $mail_p = new PHPMailer();
